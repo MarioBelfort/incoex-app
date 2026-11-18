@@ -19,7 +19,7 @@ class _HomeShellState extends State<HomeShell> {
     final pages = [const _HomeTab(), const EnviosTab(), const ResumenTab(), const _PerfilTab()];
     return Scaffold(
       backgroundColor: K.navy,
-      body: Stack(children: [
+      body: Stack(fit: StackFit.expand, children: [
         const Positioned.fill(child: FBg()),
         SafeArea(bottom: false, child: IndexedStack(index: tab, children: pages)),
         Positioned(left: 12, right: 12, bottom: MediaQuery.of(context).padding.bottom + 12, child: _TabBar(tab: tab, onTap: (i) => setState(() => tab = i))),

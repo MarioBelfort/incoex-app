@@ -21,7 +21,7 @@ class _RutaScreenState extends State<RutaScreen> {
         final list = app.viajes ? vehicles.where((v) => v.id == 'auto' || v.id == 'pickup').toList() : vehicles;
         return Scaffold(
           backgroundColor: K.navy,
-          body: Stack(children: [
+          body: Stack(fit: StackFit.expand, children: [
             Positioned.fill(child: TripMap(frame: const MapFrame(left: .12, top: .26, scale: .75, lake: .1), onlyAB: true, showVehicle: false, showRoute: app.dest)),
             SafeArea(
               child: Padding(

@@ -25,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
     return Scaffold(
       backgroundColor: K.navy,
       resizeToAvoidBottomInset: false,
-      body: Stack(children: [
+      body: Stack(fit: StackFit.expand, children: [
         Container(
           decoration: const BoxDecoration(
             gradient: RadialGradient(center: Alignment(.4, -.65), radius: .9, colors: [Color(0xCC285ADC), Color(0xFF05164F), Color(0xFF020A2A)], stops: [0, .55, 1]),
@@ -132,7 +132,7 @@ class StatusScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: K.navy,
-      body: Stack(children: [
+      body: Stack(fit: StackFit.expand, children: [
         const Positioned.fill(child: FBg()),
         SafeArea(
           child: Padding(

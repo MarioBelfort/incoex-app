@@ -617,7 +617,7 @@ class FScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: K.navy,
-      body: Stack(children: [
+      body: Stack(fit: StackFit.expand, children: [
         Positioned.fill(child: FBg(kind: bg)),
         SafeArea(
           child: Column(children: [

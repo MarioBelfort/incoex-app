@@ -46,7 +46,7 @@ class _BuscandoScreenState extends State<BuscandoScreen> with TickerProviderStat
     final v = vehById(app.tripVeh);
     return Scaffold(
       backgroundColor: K.navy,
-      body: Stack(children: [
+      body: Stack(fit: StackFit.expand, children: [
         const Positioned.fill(child: FBg(kind: BgKind.plain)),
         SafeArea(
           child: Padding(
@@ -168,7 +168,7 @@ class _SeguimientoScreenState extends State<SeguimientoScreen> {
           final ph = app.phase;
           final on = app.stepIdx.clamp(1, 4);
           final st = switch (ph) { Phase.search => 'Buscando', Phase.toPickup => 'En camino', Phase.loading => 'Recogiendo', Phase.enRoute => 'En viaje', Phase.done => 'Entregado', null => '' };
-          return Stack(children: [
+          return Stack(fit: StackFit.expand, children: [
             Positioned.fill(child: TripMap(frame: const MapFrame(left: .14, top: .06, scale: .72, lake: .07), progress: app.p)),
             SafeArea(
               child: Padding(
@@ -261,7 +261,7 @@ class _SeguimientoScreenState extends State<SeguimientoScreen> {
                       }),
                     ),
                     const SizedBox(width: 10),
-                    Expanded(flex: 5, child: _pillBtn(Icons.ios_share_rounded, 'Compartir', true, () {})),
+                    Expanded(flex: 1, child: _pillBtn(Icons.ios_share_rounded, 'Compartir', true, () {})),
                   ]),
                 ]),
               ),
