@@ -173,7 +173,9 @@ class _SeguimientoScreenState extends State<SeguimientoScreen> {
             SafeArea(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(22, 8, 22, 0),
-                child: GestureDetector(
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: GestureDetector(
                   onTap: () => goHome(context),
                   child: Container(
                     height: 48,
@@ -181,6 +183,7 @@ class _SeguimientoScreenState extends State<SeguimientoScreen> {
                     decoration: BoxDecoration(color: a(const Color(0xFF030824), .88), borderRadius: BorderRadius.circular(30), border: Border.all(color: a(Colors.white, .15))),
                     child: Row(mainAxisSize: MainAxisSize.min, children: [const Icon(Icons.chevron_left_rounded, color: Colors.white, size: 30), Text('Inicio', style: tx(15, w: FontWeight.w700))]),
                   ),
+                ),
                 ),
               ),
             ),
