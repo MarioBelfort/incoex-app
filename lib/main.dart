@@ -58,7 +58,7 @@ class ResponsiveFrame extends StatelessWidget {
       final wide = c.maxWidth >= 1000;
       final appW = wide ? 460.0 : 520.0;
       final appH = wide ? (c.maxHeight - 48).clamp(600.0, 960.0) : c.maxHeight;
-      return Stack(children: [
+      return Material(type: MaterialType.transparency, child: Stack(children: [
         const Positioned.fill(child: FBg()),
         if (wide)
           Positioned(
@@ -97,7 +97,7 @@ class ResponsiveFrame extends StatelessWidget {
             ),
           ),
         ),
-      ]);
+      ]));
     });
   }
 }
