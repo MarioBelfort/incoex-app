@@ -3,7 +3,6 @@ import 'dart:math' as math;
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 // ───────────────────────── Colores y texto ─────────────────────────
 class K {
@@ -19,7 +18,7 @@ class K {
 }
 
 TextStyle tx(double size, {FontWeight w = FontWeight.w600, Color c = Colors.white, double? h}) =>
-    GoogleFonts.figtree(fontSize: size, fontWeight: w, color: c, height: h);
+    TextStyle(fontFamily: 'Figtree', fontSize: size, fontWeight: w == FontWeight.w900 ? FontWeight.w800 : w, color: c, height: h);
 
 Color a(Color c, double o) => c.withValues(alpha: o);
 

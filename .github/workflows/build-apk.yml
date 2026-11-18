@@ -26,7 +26,7 @@ jobs:
 
       - name: Generar proyecto Android
         run: |
-          flutter create --platforms=android --org com.incoex --project-name incoex_app .
+          flutter create --platforms=android,web --org com.incoex --project-name incoex_app .
           rm -rf test
           sed -i 's/android:label="incoex_app"/android:label="INCOEX"/' android/app/src/main/AndroidManifest.xml
           sed -i 's#<application#<uses-permission android:name="android.permission.INTERNET"/>\n    <application#' android/app/src/main/AndroidManifest.xml
@@ -41,6 +41,18 @@ jobs:
           flutter build apk --release
           mkdir -p dist
           cp build/app/outputs/flutter-apk/app-release.apk dist/INCOEX.apk
+
+      - name: Compilar versión web (computadora)
+        run: flutter build web --release --no-web-resources-cdn --base-href /
+
+      - name: Guardar versión web en la rama web-build
+        run: |
+          cd build/web
+          git init -q
+          git checkout -q -b web-build
+          git add -A
+          git -c user.name="github-actions" -c user.email="actions@github.com" commit -q -m "Web build ${{ github.run_number }}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" web-build
 
       - uses: actions/upload-artifact@v4
         with:

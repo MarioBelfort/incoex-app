@@ -832,10 +832,10 @@ class Paso4Screen extends StatelessWidget {
                 Icon(i, color: Colors.white, size: 20),
                 const SizedBox(width: 12),
                 Expanded(child: Text(t, style: tx(13.5, w: FontWeight.w500))),
-                SizedBox(width: 78, child: Text(fmt(v), style: tx(13.5, w: FontWeight.w700), textAlign: TextAlign.right)),
+                SizedBox(width: 70, child: Text(fmt(v), style: tx(13, w: FontWeight.w700), textAlign: TextAlign.right)),
                 const SizedBox(width: 10),
                 SizedBox(
-                  width: 112,
+                  width: 96,
                   child: badge == null
                       ? Center(child: Text('—', style: tx(13)))
                       : Pill(badge, color: K.blue, fs: 10.5, pad: const EdgeInsets.symmetric(horizontal: 8, vertical: 5)),
